@@ -6,14 +6,18 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "lint:fix": "eslint --fix",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "lint:prettier": "npm run lint:check && npm run prettier",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
   "keywords": [],
-  "author": "",
+  "author": "sawda hoq",
   "license": "ISC",
+  "lint-staged": {
+    "src/**/*.ts": "npm run lint:prettier"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -28,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
     "typescript": "^5.1.6"
   }
 }
