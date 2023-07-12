@@ -1,22 +1,33 @@
-import winston from 'winston'
+import { createLogger, format, transports } from 'winston'
+const { combine, timestamp, label, prettyPrint } = format
+
 import path from 'path'
-const logger = winston.createLogger({
+
+const logger = createLogger({
   level: 'info',
-  format: winston.format.json(),
+  format: combine(
+    label({ label: 'Logger-Status' }),
+    timestamp(),
+    prettyPrint(),
+  ),
   transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({
+    new transports.Console(),
+    new transports.File({
       filename: path.join(process.cwd(), 'logs', 'winston', 'success.log'),
       level: 'info',
     }),
   ],
 })
-const errorlogger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
+const errorlogger = createLogger({
+  level: 'error',
+  format: combine(
+    label({ label: 'Logger-Status' }),
+    timestamp(),
+    prettyPrint(),
+  ),
   transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({
+    new transports.Console(),
+    new transports.File({
       filename: path.join(process.cwd(), 'logs', 'winston', 'error.log'),
       level: 'error',
     }),
