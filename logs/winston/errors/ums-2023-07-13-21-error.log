@@ -1,0 +1,12 @@
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'cluster0.eoyrd.mongodb.net',
+  level: 'error',
+  message: 'Failed queryTxt ETIMEOUT cluster0.eoyrd.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT cluster0.eoyrd.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:251:17)',
+  label: 'Logger-Status',
+  timestamp: '2023-07-13T15:27:38.786Z'
+}
