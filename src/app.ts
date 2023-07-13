@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: true }))
 //routes
 app.use('/api/v1/users/', UserRoutes)
 
-app.get('/', async (req, res) => {
-  throw new ApiError(400, 'Something went wrong!!!!!!')
+app.get('/', async (req, res, next) => {
+  throw new Error('Something went wrong!!!!!!')
 })
 
 app.use(globalErrorHandler)

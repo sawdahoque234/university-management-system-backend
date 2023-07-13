@@ -1,0 +1,6 @@
+{
+  message: 'Something went wrong!!!!!!',
+  level: 'error',
+  label: 'Logger-Status',
+  timestamp: '2023-07-13T16:18:21.159Z'
+}
