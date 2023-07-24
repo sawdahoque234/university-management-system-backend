@@ -72,3 +72,15 @@ undefined
   label: 'Logger-Status',
   timestamp: '2023-07-13T18:25:06.081Z'
 }
+{
+  message: 'successfully connected!!!!!!!!!!',
+  level: 'info',
+  label: 'Logger-Status',
+  timestamp: '2023-07-13T18:25:53.767Z'
+}
+{
+  message: 'Server is running!!!!!!!!!',
+  level: 'info',
+  label: 'Logger-Status',
+  timestamp: '2023-07-13T18:25:53.787Z'
+}
