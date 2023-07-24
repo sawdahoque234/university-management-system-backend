@@ -5,8 +5,10 @@ import { IGenericErrorMessage } from '../../interfaces/error'
 import ApiError from '../../errors/ApiError'
 import handleValidationError from '../../errors/hanldeValidationError'
 import { errorlogger } from '../../shared/logger'
+import handleZodError from '../../errors/handleZodError'
+import { ZodError } from 'zod'
 
-const globalErrorHandler: ErrorRequestHandler = (error, req, res) => {
+const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   config.env === 'development'
     ? console.log('globalHandler', error)
     : errorlogger.error('globalHandler', error)
@@ -20,13 +22,12 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res) => {
     statusCode = simplifiedError.statusCode
     message = simplifiedError.message
     errorMessages = simplifiedError.errorMessages
+  } else if (error instanceof ZodError) {
+    const simplifiedError = handleZodError(error)
+    statusCode = simplifiedError.statusCode
+    message = simplifiedError.message
+    errorMessages = simplifiedError.errorMessages
   }
-  // else if (error instanceof ZodError) {
-  //   const simplifiedError = handleZodError(error)
-  //   statusCode = simplifiedError.statusCode
-  //   message = simplifiedError.message
-  //   errorMessages = simplifiedError.errorMessages
-  // }
   // else if (error?.name === 'CastError') {
   //   const simplifiedError = handleCastError(error)
   //   statusCode = simplifiedError.statusCode
@@ -62,6 +63,7 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res) => {
     errorMessages,
     stack: config.env !== 'production' ? error?.stack : undefined,
   })
+  next()
 }
 
 export default globalErrorHandler
