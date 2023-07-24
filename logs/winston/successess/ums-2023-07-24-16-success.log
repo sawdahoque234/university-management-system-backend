@@ -1,0 +1,24 @@
+{
+  message: 'successfully connected!!!!!!!!!!',
+  level: 'info',
+  label: 'Logger-Status',
+  timestamp: '2023-07-24T10:43:53.307Z'
+}
+{
+  message: 'Server is running!!!!!!!!!',
+  level: 'info',
+  label: 'Logger-Status',
+  timestamp: '2023-07-24T10:43:53.336Z'
+}
+{
+  message: 'successfully connected!!!!!!!!!!',
+  level: 'info',
+  label: 'Logger-Status',
+  timestamp: '2023-07-24T10:45:42.582Z'
+}
+{
+  message: 'Server is running!!!!!!!!!',
+  level: 'info',
+  label: 'Logger-Status',
+  timestamp: '2023-07-24T10:45:42.602Z'
+}

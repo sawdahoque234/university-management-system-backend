@@ -1,0 +1,20 @@
+{
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 5000,
+  level: 'error',
+  label: 'Logger-Status',
+  timestamp: '2023-07-24T11:05:27.058Z'
+}
+{
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 5000,
+  level: 'error',
+  label: 'Logger-Status',
+  timestamp: '2023-07-24T11:06:09.364Z'
+}
